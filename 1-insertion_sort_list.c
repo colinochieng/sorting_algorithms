@@ -45,12 +45,13 @@ void insertion_sort_list(listint_t **list)
 	while (current)
 	{
 		temp = current;
-/*Loop through the list from right to left until finding the correct position for temp*/
+		/**
+		 * Loop through the list from right to
+		 * left until finding the correct position for temp
+		 *Swap temp with its previous node
+		*/
 		while (temp->prev && temp->n < temp->prev->n)
-		{
-			/*Swap temp with its previous node*/
 			swap_nodes(list, temp->prev, temp);
-		}
 
 		current = current->next;
 	}
