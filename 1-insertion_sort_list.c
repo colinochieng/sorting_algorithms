@@ -36,6 +36,7 @@ void swap_nodes(listint_t **list, listint_t *node1, listint_t *node2)
 void insertion_sort_list(listint_t **list)
 {
 	listint_t *current = NULL, *temp = NULL;
+
 	if (!list || !*list || !(*list)->next)
 		return;
 
@@ -44,7 +45,7 @@ void insertion_sort_list(listint_t **list)
 	while (current)
 	{
 		temp = current;
-		/*Loop through the list from right to left until finding the correct position for temp*/
+/*Loop through the list from right to left until finding the correct position for temp*/
 		while (temp->prev && temp->n < temp->prev->n)
 		{
 			/*Swap temp with its previous node*/
