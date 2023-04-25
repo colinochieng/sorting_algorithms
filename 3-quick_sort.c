@@ -56,7 +56,8 @@ void quick_sort(int *array, size_t size)
 	int low = 0; /*Initialize the low index as zero*/
 	int high = size - 1; /*Initialize the high index as size - 1*/
 
-	int *stack = malloc(sizeof(size_t) * size); /*Create a stack to store indexes*/
+	/*Create a stack to store indexes*/
+	int *stack = malloc(sizeof(size_t) * size);
 	int top = -1; /*Initialize the top of stack as -1*/
 	int pivot_index;
 
