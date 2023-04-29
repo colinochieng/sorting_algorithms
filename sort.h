@@ -3,8 +3,6 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <stdbool.h>
-#define back 0
-#define front 1
 
 /**
  * struct listint_s - Doubly linked list node
