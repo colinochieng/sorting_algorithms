@@ -44,7 +44,7 @@ listint_t *swap(listint_t **list, listint_t *temp, listint_t *ptr, bool st)
 	ptr->next = temp->next;
 	temp->next = ptr;
 
-	ret = st == front ?  ptr : temp;
+	ret = st == 1 ?  ptr : temp;
 	return (ret);
 }
 
