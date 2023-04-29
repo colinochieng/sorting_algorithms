@@ -28,6 +28,7 @@ listint_t *get_tail(listint_t *list)
 listint_t *swap(listint_t **list, listint_t *temp, listint_t *ptr, bool st)
 {
 	listint_t *ret = NULL;
+
 	if (!temp || !ptr)
 		return (NULL);
 	if (temp->next)
@@ -44,7 +45,7 @@ listint_t *swap(listint_t **list, listint_t *temp, listint_t *ptr, bool st)
 	temp->next = ptr;
 
 	ret = st == front ?  ptr : temp;
-        return (ret);
+	return (ret);
 }
 
 /**
@@ -60,8 +61,7 @@ void cocktail_sort_list(listint_t **list)
 
 	if (!list || !(*list) || !(*list)->next)
 		return;
-	tail = get_tail(*list);
-	head = (*list);
+	tail = get_tail(*list), head = (*list);
 
 	while (swapped)
 	{
@@ -87,14 +87,10 @@ void cocktail_sort_list(listint_t **list)
 		{
 			if (trav->n < trav->prev->n)
 			{
-				temp = swap(&(*list), trav, trav->prev, back);
-				swapped = true;
+				temp = swap(&(*list), trav, trav->prev, back), swapped = true;
 				if (temp->next == head)
-				{
 					print_list(*list), head = temp, break;
-				}
-				trav = temp;
-				print_list(*list); 
+				trav = temp, print_list(*list);
 			}
 			else
 				trav = trav->prev;
