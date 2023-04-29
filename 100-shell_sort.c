@@ -13,7 +13,6 @@ void shell_sort(int *array, size_t size)
 	size_t inter = 1;
 	size_t i, j;
 	int temp;
-	bool swapped = true;
 
 	if (!array || size == 0)
 		return;
@@ -23,20 +22,15 @@ void shell_sort(int *array, size_t size)
 
 	while (inter > 0)
 	{
-		swapped = false;
 		for (i = inter; i < size; i++)
 		{
 			temp = array[i];
-			for (j = i; (j > inter - 1) && (array[j - inter] > temp); j -= inter)
-			{
+			for (j = i; (j > inter - 1) && (array[j - inter] >= temp); j -= inter)
 				array[j] = array[j - inter];
-				swapped = true;
-			}
 
 			array[j] = temp;
 		}
-		if (!swapped)
-			break;
+
 		print_array(array, size);
 		inter = (inter - 1) / 3;
 	}
